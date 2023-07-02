@@ -6,14 +6,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn import metrics
-
+from sentence_transformers import SentenceTransformer
+from openai.embeddings_utils import cosine_similarity
 
 homicidios_df = pd.read_csv('./datasetHomicidios.csv', encoding='utf-8')
+X = homicidios_df.drop(['CASOS','Pena'], axis=1)
+Y = homicidios_df['Pena']
 
-def data_cleansing(homicidios_df):
-    X = homicidios_df.drop(['CASOS','Pena'], axis=1)
-    Y = homicidios_df['Pena']
-
+def data_cleansing(X):
     numerical = X['Edad del acusado']
     categoriacal = X.drop(['Edad del acusado'], axis=1)
 
@@ -46,6 +46,8 @@ def data_cleansing(homicidios_df):
     
     return X
 
+X = data_cleansing(X)
+
 def train_model(X, Y):
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.20, random_state=0)
 
@@ -61,9 +63,11 @@ def train_model(X, Y):
     print('Mean Squared Error: ', metrics.mean_squared_error(Y_test, y_pred))
     print('Root Mean Squared Rerror: ', np.sqrt(metrics.mean_squared_error(Y_test, y_pred)))
 
-    return sc, regressor, 
+    return sc, regressor
 
-def predict (sc, regressor, New_data):
+sc, regressor = train_model(X, Y)
+
+def predict (New_data, sc = sc, regressor= regressor ):
     New_df = pd.DataFrame(New_data, index=[0])
 
     TipoHomicidio = {'Simple': 1, 'Calificado': 2}
@@ -89,13 +93,52 @@ def predict (sc, regressor, New_data):
     New_df['Grado de violencia'] = New_df['Grado de violencia'].copy().map(GradoViolencia)
 
     New_df = New_df.fillna(0)
+
     New_df_scaled = sc.transform(New_df)
     prediction = regressor.predict(New_df_scaled)
 
     return prediction
 
-New_data = {'Edad del acusado': 27,'Tipo de homicidio':'', 'Antecedentes del acusado':'ha cometido homicidios previos', 'Agravantes':'uso de armas de fuego',
-       'Evidencias presentadas en el juicio':'',
-       'Relacion entre el acusado y la victima':'', 'Motivacion del crimen':'',
-       'Conducta del acusado durante el juicio':'colaboracion con la justicia', 'Causalidades externas':'consumo de alcohol',
-       'Evaluacion psicologica':'', 'Grado de violencia':''}
+data = pd.read_csv('vars.csv')
+model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
+def format_data(description, data = data):
+    data['Embedding'] = data["Variables"].apply(lambda x: model.encode(x))
+    description_embed = model.encode(description)
+    data['Similarity'] = data["Embedding"].apply(lambda x: cosine_similarity(x, description_embed))
+    data = data.sort_values('Similarity', ascending=False)
+
+    case_data = {'Edad del acusado': 0,'Tipo de homicidio':'', 'Antecedentes del acusado':'', 'Agravantes':'',
+       'Evidencias presentadas en el juicio':'','Relacion entre el acusado y la victima':'', 'Motivacion del crimen':'',
+       'Conducta del acusado durante el juicio':'', 'Causalidades externas':'','Evaluacion psicologica':'', 'Grado de violencia':''}
+    
+    selected_data =  data.head()
+    case_data[selected_data.iloc[0,0]] = selected_data.iloc[0,1]
+    case_data[selected_data.iloc[1,0]] = selected_data.iloc[1,1]
+    case_data[selected_data.iloc[2,0]] = selected_data.iloc[2,1]
+    case_data[selected_data.iloc[3,0]] = selected_data.iloc[3,1]
+    case_data[selected_data.iloc[4,0]] = selected_data.iloc[4,1]
+
+    case_df = pd.DataFrame(case_data, index=[0])
+
+    return case_data, case_df
+
+description = 'Una persona es acusada por habe cometido homicidio calificado, el crimen fue ejecutado con complice con otras personas, ademas para el caso se presentaron testimonios que corroboran el hecho'
+
+case_data, _ = format_data(description)
+prediction = predict(case_data)
+
+print("Prediccion de la pena privativa: ", prediction)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

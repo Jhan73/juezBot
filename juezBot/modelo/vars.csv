@@ -1,0 +1,34 @@
+﻿Categoria,Variables
+Tipo de homicidio,Simple
+Tipo de homicidio,Calificado
+Antecedentes del acusado,ausencia de antecedentes
+Antecedentes del acusado,Tiene antecedentes por delitos violentos
+Antecedentes del acusado,ha cometido homicidios previos
+Agravanates ,uso de arma blanca
+Agravanates ,uso de armas de fuego
+Agravanates ,planificacion del crimen
+Agravanates ,participacion de multiples acusados
+Evidencias presentadas en el juicio,evaluaciones psicológicas
+Evidencias presentadas en el juicio,testimonios de testigos
+Evidencias presentadas en el juicio,registros de comunicaciones
+Evidencias presentadas en el juicio,pruebas forenses
+Relacion entre el acusado y la victima,conocidos
+Relacion entre el acusado y la victima,parejas
+Relacion entre el acusado y la victima,familiares
+Motivacion del crimen,defensa propia
+Motivacion del crimen,celos
+Motivacion del crimen,violencia domestica
+Motivacion del crimen,venganza
+Conducta del acusado durante el juicio,Muestra arrepentimiento genuino
+Conducta del acusado durante el juicio,ha realizado acciones de reparacion
+Conducta del acusado durante el juicio,muestra remordimiento
+Conducta del acusado durante el juicio,colaboracion con la justicia
+Edad del acusado,25
+Causalidades externas,presion de grupos delectivos
+Causalidades externas,consumo de alcohol
+Causalidades externas,consumo de drogas
+Evaluacion psicologica,condiciones que afectan la capacidad de juicio
+Evaluacion psicologica,transtornos mentales
+Grado de violencia,tortura
+Grado de violencia,mutilacion
+Grado de violencia,violencia extrema
