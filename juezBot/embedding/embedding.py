@@ -11,6 +11,7 @@ from sentence_transformers import SentenceTransformer
 
 
 openai.api_key = os.environ.get('OPENAI_API_KEY')
+model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
 
 def generate_knowledge(pdf_file):
     pdf_file = PyPDFLoader(pdf_file)
@@ -21,7 +22,7 @@ def generate_knowledge(pdf_file):
     texts = [str(text.page_content) for text in texts] #Lista de parrafos
     paragraphs = pd.DataFrame(texts, columns=["text"])
 
-    model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
+    
     paragraphs['Embedding'] = paragraphs["text"].apply(lambda x: model.encode(x)) # Nueva columna con los embeddings de los parrafos
     paragraphs.to_csv('embeddings.csv')
 
@@ -55,7 +56,7 @@ def get_context(question):
     select_paragraphs = knowledge_base.head(3)
     context = ' '.join(select_paragraphs['text'])
 
-    return contex
+    return context
 
 
 question = '¿la pena por homicidio calificado?'

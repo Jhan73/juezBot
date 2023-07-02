@@ -122,7 +122,7 @@ def format_data(description, data = data):
 
     return case_data, case_df
 
-description = 'Una persona es acusada por habe cometido homicidio calificado, el crimen fue ejecutado con complice con otras personas, ademas para el caso se presentaron testimonios que corroboran el hecho'
+description = 'Una persona es acusada por haber cometido homicidio calificado, el crimen fue ejecutado con complice con otras personas, ademas para el caso se presentaron testimonios que corroboran el hecho'
 
 case_data, _ = format_data(description)
 prediction = predict(case_data)
