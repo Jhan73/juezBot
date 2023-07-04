@@ -26,10 +26,9 @@ def generate_knowledge(pdf_file):
     paragraphs['Embedding'] = paragraphs["text"].apply(lambda x: model.encode(x)) # Nueva columna con los embeddings de los parrafos
     paragraphs.to_csv('embeddings.csv')
 
-    return 'embeddings.csv'
 
-pdf_file = "codigoPenal.pdf"
-generate_knowledge(pdf_file)
+pdf_file = "./juezBot/embedding/codigoPenal.pdf"
+#generate_knowledge(pdf_file)
 
 def get_knowledge(csv_file):
     knowledge_base = pd.read_csv(csv_file)
@@ -44,11 +43,8 @@ knowledge_base = get_knowledge(csv_file)
 
 # Consulta a la base de conocimiento
 
-def get_context(question):
+def get_context(question, knowledge_base):
     question_embed = model.encode(question)
-
-    csv_file = 'embeddings.csv'
-    knowledge_base = get_knowledge(csv_file)
 
     knowledge_base['Similarity'] = knowledge_base["Embedding"].apply(lambda x: cosine_similarity(x, question_embed))
     knowledge_base = knowledge_base.sort_values('Similarity', ascending=False)
@@ -59,28 +55,26 @@ def get_context(question):
     return context
 
 
-question = '¿la pena por homicidio calificado?'
-context = get_context(question)
+question = '¿cual es la pena privativa por homicidio calificado?'
+context = get_context(question, knowledge_base)
 
-def get_answere(question):
-    context = get_context(question)
-
+def get_answer(context, question, engine="text-davinci-002", temp=0.5, max_tokens=100, top_p=1, frequency_penalty=0, presence_penalty=0):
     prompt = "en base al siguiente contexto: "+context+"\nresponde a la siguiente pregunta: "+question
-    engine="text-davinci-002", 
-    temp=0.5 
-    max_tokens=100
-    top_p=1
-    frequency_penalty=0
-    presence_penalty=0
     answer = openai.Completion.create(
-                                    engine=engine,
-                                    prompt=prompt,
-                                    temperature=temp,
-                                    max_tokens=max_tokens,
-                                    top_p=top_p,
-                                    frequency_penalty=frequency_penalty,
-                                    presence_penalty=presence_penalty
-                                    )
+        engine=engine,
+        prompt=prompt,
+        temperature=temp,
+        max_tokens=max_tokens,
+        top_p=top_p,
+        frequency_penalty=frequency_penalty,
+        presence_penalty=presence_penalty
+    )
     return answer['choices'][0]['text']
 
-print(get_answere(question))
+answer = get_answer(context, question)
+
+while True:
+    question = input('Human : ')
+    context = get_context(question=question, knowledge_base=knowledge_base)
+    answer = get_answer(context, question)
+    print('Bot: ', answer)
