@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\cursos UNI\cursos 23-1\AnaliticaDeDatos\TGrupales\FINAL\JuezBot\env
+set VIRTUAL_ENV=C:\Users\Crystal\Documents\juez bot 1\juezBot\env
 
 if not defined PROMPT set PROMPT=$P$G
 

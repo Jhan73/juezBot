@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\cursos UNI\cursos 23-1\AnaliticaDeDatos\TGrupales\FINAL\JuezBot\env"
+VIRTUAL_ENV="C:\Users\Crystal\Documents\juez bot 1\juezBot\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
