@@ -1,0 +1,79 @@
+﻿Genero,Edad,Delito,Sentencia,Apelacion,Colaboracion con la justicia,programas de rehabilitación y tramiento,Amnistía o indulto,Motivos de salud,Reducción de pena
+Femenino,26,Homicidio calificado,25,La apelación fue rechazada,No,Si,Si,Si,2
+Masculino,56,Homicidio simple,20,No hubo apelaciones,Si,Si,Si,Si,3
+Femenino,26,Homicidio simple,30,La apelación fue rechazada,No,No,Si,No,2
+Masculino,21,Homicidio calificado,35,La apelación fue rechazada,No,No,Si,No,1
+Masculino,42,Homicidio simple,25,No hubo apelaciones,No,No,Si,No,1
+Femenino,25,Homicidio simple,15,No hubo apelaciones,Si,Si,Si,Si,3
+Femenino,16,Homicidio simple,15,La apelación fue aceptada,Si,No,No,Si,3
+Masculino,53,Homicidio calificado,25,No hubo apelaciones,No,No,No,No,0
+Masculino,22,Homicidio simple,40,La apelación fue rechazada,No,No,No,No,1
+Femenino,49,Homicidio simple,15,La apelación fue rechazada,No,No,Si,Si,2
+Masculino,36,Homicidio calificado,30,No hubo apelaciones,Si,Si,Si,Si,3
+Femenino,25,Homicidio simple,20,La apelación fue rechazada,No,No,Si,No,2
+Masculino,25,Homicidio simple,25,La apelación fue rechazada,No,No,No,No,1
+Masculino,40,Homicidio simple,30,La apelación fue rechazada,No,No,No,Si,2
+Masculino,23,Homicidio calificado,35,La apelación fue rechazada,Si,No,Si,Si,2
+Femenino,15,Homicidio simple,40,La apelación fue rechazada,No,Si,No,No,3
+Femenino,16,Homicidio simple,15,La apelación fue aceptada,No,Si,No,No,3
+Femenino,38,Homicidio simple,25,La apelación fue rechazada,Si,Si,Si,No,3
+Femenino,47,Homicidio calificado,15,La apelación fue rechazada,No,Si,No,Si,2
+Masculino,53,Homicidio simple,30,No hubo apelaciones,No,Si,No,Si,2
+Femenino,19,Homicidio simple,20,La apelación fue aceptada,No,Si,No,No,2
+Femenino,29,Homicidio calificado,35,La apelación fue aceptada,Si,Si,Si,Si,4
+Masculino,35,Homicidio calificado,25,No hubo apelaciones,Si,No,No,No,1
+Femenino,20,Homicidio simple,30,La apelación fue rechazada,Si,Si,Si,Si,4
+Femenino,16,Homicidio simple,20,La apelación fue aceptada,Si,Si,Si,Si,4
+Masculino,41,Homicidio calificado,25,La apelación fue aceptada,Si,Si,No,Si,2
+Masculino,18,Homicidio calificado,15,La apelación fue rechazada,Si,Si,No,Si,2
+Femenino,26,Homicidio calificado,20,La apelación fue rechazada,No,Si,No,Si,2
+Femenino,38,Homicidio simple,30,La apelación fue aceptada,Si,Si,Si,No,4
+Masculino,52,Homicidio simple,15,No hubo apelaciones,No,No,No,No,1
+Masculino,24,Homicidio calificado,25,La apelación fue rechazada,Si,No,No,No,1
+Masculino,34,Homicidio simple,18,La apelación fue aceptada,Si,No,Si,No,2
+Femenino,30,Homicidio simple,22,No hubo apelaciones,No,No,No,Si,2
+Femenino,48,Homicidio simple,30,La apelación fue rechazada,Si,Si,Si,No,3
+Femenino,52,Homicidio calificado,17,La apelación fue aceptada,Si,No,No,No,2
+Femenino,29,Homicidio simple,23,La apelación fue aceptada,Si,Si,Si,No,3
+Femenino,48,Homicidio simple,28,No hubo apelaciones,No,No,No,Si,2
+Masculino,49,Homicidio simple,21,No hubo apelaciones,No,No,No,No,1
+Femenino,36,Homicidio calificado,26,No hubo apelaciones,No,No,Si,No,2
+Masculino,26,Homicidio simple,19,No hubo apelaciones,Si,Si,No,No,2
+Femenino,21,Homicidio simple,32,No hubo apelaciones,Si,Si,No,Si,3
+Masculino,49,Homicidio calificado,24,No hubo apelaciones,No,Si,No,Si,1
+Femenino,36,Homicidio simple,20,La apelación fue rechazada,No,Si,Si,No,2
+Femenino,17,Homicidio simple,25,La apelación fue rechazada,Si,No,Si,No,3
+Masculino,33,Homicidio calificado,15,La apelación fue aceptada,Si,No,No,No,1
+Masculino,49,Homicidio calificado,22,La apelación fue aceptada,No,Si,No,No,1
+Masculino,19,Homicidio simple,18,La apelación fue rechazada,No,Si,No,No,1
+Femenino,33,Homicidio simple,28,No hubo apelaciones,Si,Si,Si,No,3
+Femenino,31,Homicidio simple,23,La apelación fue rechazada,Si,Si,No,Si,3
+Masculino,31,Homicidio calificado,17,No hubo apelaciones,No,No,Si,Si,1
+Femenino,19,Homicidio simple,21,La apelación fue rechazada,No,Si,No,No,2
+Masculino,20,Homicidio simple,25,La apelación fue aceptada,Si,No,No,Si,2
+Femenino,41,Homicidio calificado,20,La apelación fue aceptada,Si,No,Si,No,2
+Masculino,51,Homicidio simple,30,La apelación fue aceptada,No,Si,No,No,2
+Masculino,15,Homicidio simple,15,No hubo apelaciones,Si,No,Si,Si,3
+Masculino,51,Homicidio simple,22,La apelación fue aceptada,Si,Si,No,No,2
+Masculino,32,Homicidio calificado,18,No hubo apelaciones,Si,No,No,Si,1
+Femenino,36,Homicidio simple,28,La apelación fue aceptada,Si,No,No,No,3
+Masculino,23,Homicidio simple,23,La apelación fue rechazada,Si,Si,No,No,2
+Masculino,33,Homicidio calificado,17,No hubo apelaciones,Si,No,No,No,1
+Masculino,51,Homicidio simple,21,No hubo apelaciones,Si,No,Si,No,2
+Masculino,52,Homicidio simple,25,La apelación fue aceptada,Si,No,Si,Si,3
+Masculino,53,Homicidio simple,20,La apelación fue rechazada,Si,Si,Si,Si,3
+Masculino,23,Homicidio simple,15,La apelación fue rechazada,No,Si,Si,Si,2
+Masculino,21,Homicidio calificado,23,La apelación fue aceptada,No,No,Si,Si,2
+Masculino,37,Homicidio simple,18,La apelación fue aceptada,No,Si,No,Si,2
+Masculino,28,Homicidio simple,28,No hubo apelaciones,No,No,Si,No,2
+Masculino,23,Homicidio calificado,20,No hubo apelaciones,Si,Si,No,Si,2
+Femenino,47,Homicidio simple,25,La apelación fue aceptada,No,No,Si,No,2
+Masculino,33,Homicidio calificado,17,La apelación fue rechazada,No,No,Si,Si,1
+Masculino,45,Homicidio simple,21,La apelación fue rechazada,No,Si,Si,No,2
+Masculino,50,Homicidio simple,23,La apelación fue rechazada,No,Si,No,Si,2
+Masculino,16,Homicidio calificado,15,No hubo apelaciones,Si,Si,Si,No,2
+Masculino,45,Homicidio simple,19,La apelación fue aceptada,No,No,No,No,1
+Femenino,50,Homicidio simple,27,La apelación fue rechazada,No,Si,Si,No,3
+Masculino,27,Homicidio calificado,22,La apelación fue aceptada,Si,No,No,Si,2
+Masculino,21,Homicidio simple,24,La apelación fue aceptada,Si,Si,Si,Si,3
+Masculino,47,Homicidio simple,16,La apelación fue rechazada,Si,Si,No,No,2
