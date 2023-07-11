@@ -57,9 +57,9 @@ def train_model(X, Y):
     regressor = rf_reg.fit(X_train, Y_train)
     y_pred = regressor.predict(X_test)
 
-    print('Mean Absolute Error: ', metrics.mean_absolute_error(Y_test, y_pred))
-    print('Mean Squared Error: ', metrics.mean_squared_error(Y_test, y_pred))
-    print('Root Mean Squared Rerror: ', np.sqrt(metrics.mean_squared_error(Y_test, y_pred)))
+    #print('Mean Absolute Error: ', metrics.mean_absolute_error(Y_test, y_pred))
+    #print('Mean Squared Error: ', metrics.mean_squared_error(Y_test, y_pred))
+    #print('Root Mean Squared Rerror: ', np.sqrt(metrics.mean_squared_error(Y_test, y_pred)))
 
     scaler_path = './juezBot/modelo/trained_scaler.joblib'
     joblib.dump(sc, scaler_path)
@@ -110,8 +110,7 @@ case_df = format_data(description)
 path_model = './juezBot/modelo/trained_model.joblib'
 regressor = joblib.load(path_model)
 
-print('fuera')
-def predict (case_df, regressor):
+def predict (case_df, regressor = regressor):
     sc = StandardScaler()
     scaler_path = './juezBot/modelo/trained_scaler.joblib'
     sc = joblib.load(scaler_path)
@@ -121,8 +120,12 @@ def predict (case_df, regressor):
 
     return prediction
 
-prediction = predict(case_df, regressor=regressor)
+#prediction = predict(case_df, regressor)
 
-print("Prediccion de la pena privativa: ", prediction)
+"""while True:
+    description = input('Human: ')
+    case_df = format_data(description)
+    prediction = predict (case_df)
+    print('Bot: ',f'La pena privativa de libertad para el caso es de {prediction} años')"""
 
 

@@ -73,8 +73,8 @@ def get_answer(context, question, engine="text-davinci-002", temp=0.5, max_token
 
 answer = get_answer(context, question)
 
-while True:
+"""while True:
     question = input('Human : ')
     context = get_context(question=question, knowledge_base=knowledge_base)
     answer = get_answer(context, question)
-    print('Bot: ', answer)
+    print('Bot: ', answer)"""
